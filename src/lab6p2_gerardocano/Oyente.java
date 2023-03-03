@@ -19,7 +19,7 @@ public class Oyente extends Usuarios {
     super();
     }
 
-    public Oyente(String username, String password, int edad) {
+    public Oyente(String username, String password, int edad,String tipo) {
         super(username, password, edad);
     }
     

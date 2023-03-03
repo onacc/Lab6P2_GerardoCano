@@ -18,8 +18,8 @@ public class Artista extends Usuarios {
     public Artista() {
     super();
     }
-
-    public Artista(String nombreart, String username, String password, int edad) {
+    
+    public Artista(String nombreart, String username, String password, int edad,String tipo) {
         super(username, password, edad);
         this.nombreart = nombreart;
     }

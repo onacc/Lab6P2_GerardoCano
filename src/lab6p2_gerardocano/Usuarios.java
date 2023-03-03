@@ -9,7 +9,7 @@ package lab6p2_gerardocano;
  * @author gcano
  */
 public class Usuarios {
-    protected String username, password;
+    protected String username, password,tipo;
     protected int edad;
 
     public Usuarios() {

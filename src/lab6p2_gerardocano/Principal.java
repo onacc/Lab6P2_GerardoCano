@@ -5,6 +5,7 @@
 package lab6p2_gerardocano;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JSpinner.DefaultEditor;
 
 /**
@@ -40,6 +41,15 @@ public class Principal extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btn_crear = new javax.swing.JButton();
         btn_regresar = new javax.swing.JToggleButton();
+        jf_oyente = new javax.swing.JFrame();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTree1 = new javax.swing.JTree();
+        jf_artista = new javax.swing.JFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTree2 = new javax.swing.JTree();
+        btn_agregar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jtxt_userlog = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -52,7 +62,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel5.setText("Contraseña:");
 
-        js_age.setModel(new javax.swing.SpinnerNumberModel(18, 1, 80, 1));
+        js_age.setModel(new javax.swing.SpinnerNumberModel(12, 1, 80, 1));
 
         jLabel6.setText("Edad");
 
@@ -110,6 +120,56 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btn_crear)
                     .addComponent(btn_regresar))
                 .addContainerGap(151, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jList1);
+
+        jScrollPane2.setViewportView(jTree1);
+
+        javax.swing.GroupLayout jf_oyenteLayout = new javax.swing.GroupLayout(jf_oyente.getContentPane());
+        jf_oyente.getContentPane().setLayout(jf_oyenteLayout);
+        jf_oyenteLayout.setHorizontalGroup(
+            jf_oyenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jf_oyenteLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+        );
+        jf_oyenteLayout.setVerticalGroup(
+            jf_oyenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_oyenteLayout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addGroup(jf_oyenteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 388, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+
+        jScrollPane3.setViewportView(jTree2);
+
+        btn_agregar.setText("Agregar");
+
+        javax.swing.GroupLayout jf_artistaLayout = new javax.swing.GroupLayout(jf_artista.getContentPane());
+        jf_artista.getContentPane().setLayout(jf_artistaLayout);
+        jf_artistaLayout.setHorizontalGroup(
+            jf_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_artistaLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_agregar)
+                .addContainerGap(289, Short.MAX_VALUE))
+        );
+        jf_artistaLayout.setVerticalGroup(
+            jf_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_artistaLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jf_artistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btn_agregar)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,14 +254,17 @@ public class Principal extends javax.swing.JFrame {
         //users.add(new Usuarios(jtxt_user.getText(),jtxt_pw.getText(),i));
         
         if(i<18){
-            users.add(new Oyente(jtxt_user.getText(),jtxt_pw.getText(),i));
+            users.add(new Oyente(jtxt_user.getText(),jtxt_pw.getText(),i,"Oyente"));
         }else{
-             users.add(new Artista(jtxt_user.getText(),jtxt_pw.getText(),i));
+            String art = JOptionPane.showInputDialog("Ingrese nombre artistico");
+            users.add(new Artista(art,jtxt_user.getText(),jtxt_pw.getText(),i,"Artista"));
+             
         }
         jf_registro.setVisible(false);
         setVisible(true);
         jtxt_user.setText(" ");
         jtxt_pw.setText(" ");
+        System.out.println(users);
     }//GEN-LAST:event_btn_crearActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
@@ -212,14 +275,22 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_regresarActionPerformed
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        setVisible(false);
+        //setVisible(false);
         for (int i = 0; i < users.size(); i++) {
-            if(users.get(i).getUsername()==jtxt_userlog.getText()&& users.get(i) instanceof Oyente &&users.get(i).getPassword()==jtxt_pwlogin.getText() ){
+            if((users.get(i).getUsername() == null ? jtxt_userlog.getText() == null : users.get(i).getUsername().equals(jtxt_userlog.getText()))& users.get(i) instanceof Oyente &(users.get(i).getPassword() == null ? jtxt_pwlogin.getText() == null : users.get(i).getPassword().equals(jtxt_pwlogin.getText())) ){
                 
+                setVisible(false);
+                jf_oyente.setSize(400,400);
+                jf_oyente.setVisible(true);
+                jf_oyente.setLocationRelativeTo(this);
+            }else if((users.get(i).getUsername() == null ? jtxt_userlog.getText() == null : users.get(i).getUsername().equals(jtxt_userlog.getText()))&& users.get(i) instanceof Artista &&(users.get(i).getPassword() == null ? jtxt_pwlogin.getText() == null : users.get(i).getPassword().equals(jtxt_pwlogin.getText())) ){
                 
-            }else if(users.get(i).getUsername()==jtxt_userlog.getText()&& users.get(i) instanceof Artista &&users.get(i).getPassword()==jtxt_pwlogin.getText() ){
-                
-                
+                setVisible(false);
+                jf_artista.setVisible(true);
+                jf_artista.setLocationRelativeTo(this);
+                jf_artista.setSize(400,400);
+            }else{
+                JOptionPane.showMessageDialog(this, "Usuario no reconocido");
             }
         }
     }//GEN-LAST:event_btn_loginActionPerformed
@@ -260,6 +331,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_crear;
     private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_register;
@@ -270,6 +342,14 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTree jTree1;
+    private javax.swing.JTree jTree2;
+    private javax.swing.JFrame jf_artista;
+    private javax.swing.JFrame jf_oyente;
     private javax.swing.JFrame jf_registro;
     private javax.swing.JSpinner js_age;
     private javax.swing.JTextField jtxt_pw;
