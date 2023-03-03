@@ -8,6 +8,7 @@ package lab6p2_gerardocano;
  *
  * @author gcano
  */
-public class Artista {
+public class Artista extends Usuarios {
+    private String nombreart;
     
 }

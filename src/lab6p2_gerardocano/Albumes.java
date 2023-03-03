@@ -4,10 +4,45 @@
  */
 package lab6p2_gerardocano;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author gcano
  */
-public class Albumes {
+public class Albumes extends Lanzamientos {
+    private ArrayList<Cancion> canciones = new ArrayList();
+    private int cont;
+
+    public Albumes() {
+    super();
+    }
+
+    public Albumes(int cont, String titulo, String fecha, int conteo) {
+        super(titulo, fecha, conteo);
+        this.cont = cont;
+    }
+
+    public ArrayList<Cancion> getCanciones() {
+        return canciones;
+    }
+
+    public void setCanciones(ArrayList<Cancion> canciones) {
+        this.canciones = canciones;
+    }
+
+    public int getCont() {
+        return cont;
+    }
+
+    public void setCont(int cont) {
+        this.cont = cont;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ canciones ;
+    }
+    
     
 }

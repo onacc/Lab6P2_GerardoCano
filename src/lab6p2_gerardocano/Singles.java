@@ -8,6 +8,31 @@ package lab6p2_gerardocano;
  *
  * @author gcano
  */
-public class Singles {
+public class Singles extends Lanzamientos {
+    private Cancion single;
+
+    public Singles() {
+    super();
+    }
+
+    public Singles(Cancion single, String titulo, String fecha, int conteo) {
+        super(titulo, fecha, conteo);
+        this.single = single;
+    }
+
+    public Cancion getSingle() {
+        return single;
+    }
+
+    public void setSingle(Cancion single) {
+        this.single = single;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ single; 
+    }
+    
+  
     
 }
