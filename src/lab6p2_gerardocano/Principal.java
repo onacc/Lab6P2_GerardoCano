@@ -41,10 +41,10 @@ public class Principal extends javax.swing.JFrame {
         btn_crear = new javax.swing.JButton();
         btn_regresar = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jtxt_userlog = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jtxt_pwlogin = new javax.swing.JTextField();
         btn_login = new javax.swing.JButton();
         btn_register = new javax.swing.JButton();
 
@@ -121,6 +121,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setText("Password:");
 
         btn_login.setText("Ingresar");
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_loginActionPerformed(evt);
+            }
+        });
 
         btn_register.setText("Registrarse");
         btn_register.addActionListener(new java.awt.event.ActionListener() {
@@ -144,9 +149,9 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(btn_login)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLabel2)
-                                .addComponent(jTextField1)
+                                .addComponent(jtxt_userlog)
                                 .addComponent(jLabel3)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
+                                .addComponent(jtxt_pwlogin, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE))
                             .addComponent(btn_register))))
                 .addContainerGap(297, Short.MAX_VALUE))
         );
@@ -158,11 +163,11 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxt_userlog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(38, 38, 38)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxt_pwlogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btn_login)
                 .addGap(18, 18, 18)
@@ -205,6 +210,19 @@ public class Principal extends javax.swing.JFrame {
         jtxt_user.setText(" ");
         jtxt_pw.setText(" ");
     }//GEN-LAST:event_btn_regresarActionPerformed
+
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        setVisible(false);
+        for (int i = 0; i < users.size(); i++) {
+            if(users.get(i).getUsername()==jtxt_userlog.getText()&& users.get(i) instanceof Oyente &&users.get(i).getPassword()==jtxt_pwlogin.getText() ){
+                
+                
+            }else if(users.get(i).getUsername()==jtxt_userlog.getText()&& users.get(i) instanceof Artista &&users.get(i).getPassword()==jtxt_pwlogin.getText() ){
+                
+                
+            }
+        }
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -252,12 +270,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JFrame jf_registro;
     private javax.swing.JSpinner js_age;
     private javax.swing.JTextField jtxt_pw;
+    private javax.swing.JTextField jtxt_pwlogin;
     private javax.swing.JTextField jtxt_user;
+    private javax.swing.JTextField jtxt_userlog;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuarios> users = new ArrayList();
 }
