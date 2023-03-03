@@ -19,6 +19,10 @@ public class Oyente extends Usuarios {
     super();
     }
 
+    public Oyente(String username, String password, int edad) {
+        super(username, password, edad);
+    }
+    
     public ArrayList<Playlist> getCreadas() {
         return creadas;
     }

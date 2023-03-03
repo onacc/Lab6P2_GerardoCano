@@ -33,12 +33,13 @@ public class Principal extends javax.swing.JFrame {
 
         jf_registro = new javax.swing.JFrame();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jtxt_user = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jtxt_pw = new javax.swing.JTextField();
         js_age = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
-        btn_cargar = new javax.swing.JButton();
+        btn_crear = new javax.swing.JButton();
+        btn_regresar = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -55,7 +56,19 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel6.setText("Edad");
 
-        btn_cargar.setText("Crear");
+        btn_crear.setText("Crear");
+        btn_crear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_crearActionPerformed(evt);
+            }
+        });
+
+        btn_regresar.setText("Regresar");
+        btn_regresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_regresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jf_registroLayout = new javax.swing.GroupLayout(jf_registro.getContentPane());
         jf_registro.getContentPane().setLayout(jf_registroLayout);
@@ -64,15 +77,18 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jf_registroLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jf_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_cargar)
+                    .addGroup(jf_registroLayout.createSequentialGroup()
+                        .addComponent(btn_crear)
+                        .addGap(158, 158, 158)
+                        .addComponent(btn_regresar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel6)
                     .addComponent(js_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jf_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jLabel5)
                         .addComponent(jLabel4)
-                        .addComponent(jTextField3)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)))
-                .addContainerGap(290, Short.MAX_VALUE))
+                        .addComponent(jtxt_user)
+                        .addComponent(jtxt_pw, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)))
+                .addContainerGap(202, Short.MAX_VALUE))
         );
         jf_registroLayout.setVerticalGroup(
             jf_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,17 +96,19 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxt_user, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtxt_pw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(js_age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btn_cargar)
+                .addGroup(jf_registroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_crear)
+                    .addComponent(btn_regresar))
                 .addContainerGap(151, Short.MAX_VALUE))
         );
 
@@ -162,7 +180,31 @@ public class Principal extends javax.swing.JFrame {
         jf_registro.setLocationRelativeTo(this);
         jf_registro.setVisible(true);
         jf_registro.setSize(600, 400);
+        
+        
     }//GEN-LAST:event_btn_registerActionPerformed
+
+    private void btn_crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearActionPerformed
+        int i = (int)js_age.getValue();
+        //users.add(new Usuarios(jtxt_user.getText(),jtxt_pw.getText(),i));
+        
+        if(i<18){
+            users.add(new Oyente(jtxt_user.getText(),jtxt_pw.getText(),i));
+        }else{
+             users.add(new Artista(jtxt_user.getText(),jtxt_pw.getText(),i));
+        }
+        jf_registro.setVisible(false);
+        setVisible(true);
+        jtxt_user.setText(" ");
+        jtxt_pw.setText(" ");
+    }//GEN-LAST:event_btn_crearActionPerformed
+
+    private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
+        jf_registro.setVisible(false);
+        setVisible(true);
+        jtxt_user.setText(" ");
+        jtxt_pw.setText(" ");
+    }//GEN-LAST:event_btn_regresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,9 +242,10 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_cargar;
+    private javax.swing.JButton btn_crear;
     private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_register;
+    private javax.swing.JToggleButton btn_regresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -211,10 +254,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JFrame jf_registro;
     private javax.swing.JSpinner js_age;
+    private javax.swing.JTextField jtxt_pw;
+    private javax.swing.JTextField jtxt_user;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuarios> users = new ArrayList();
 }

@@ -10,17 +10,21 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btn_cargar" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="btn_crear" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="158" max="-2" attributes="0"/>
+                          <Component id="btn_regresar" min="-2" pref="100" max="-2" attributes="0"/>
+                      </Group>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <Component id="js_age" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" max="32767" attributes="0"/>
-                          <Component id="jTextField4" alignment="0" pref="242" max="32767" attributes="0"/>
+                          <Component id="jtxt_user" max="32767" attributes="0"/>
+                          <Component id="jtxt_pw" alignment="0" pref="242" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="290" max="32767" attributes="0"/>
+                  <EmptySpace pref="202" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -30,17 +34,20 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jTextField3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxt_user" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jTextField4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxt_pw" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="js_age" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="btn_cargar" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btn_crear" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_regresar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace pref="151" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -52,14 +59,14 @@
             <Property name="text" type="java.lang.String" value="Nombre de Usuario:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="jtxt_user">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
             <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="jtxt_pw">
         </Component>
         <Component class="javax.swing.JSpinner" name="js_age">
           <Properties>
@@ -73,10 +80,21 @@
             <Property name="text" type="java.lang.String" value="Edad"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_cargar">
+        <Component class="javax.swing.JButton" name="btn_crear">
           <Properties>
             <Property name="text" type="java.lang.String" value="Crear"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_crearActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JToggleButton" name="btn_regresar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Regresar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_regresarActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

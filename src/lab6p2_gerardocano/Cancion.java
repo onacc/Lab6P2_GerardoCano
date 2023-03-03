@@ -16,7 +16,7 @@ public class Cancion {
         this.duracion = duracion;
         this.ref = ref;
     }
-
+    
     public String getTitulo() {
         return titulo;
     }
