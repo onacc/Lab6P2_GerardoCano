@@ -250,11 +250,11 @@ public class Principal extends javax.swing.JFrame {
         jf_album.getContentPane().setLayout(jf_albumLayout);
         jf_albumLayout.setHorizontalGroup(
             jf_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 702, Short.MAX_VALUE)
         );
         jf_albumLayout.setVerticalGroup(
             jf_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 589, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -354,7 +354,7 @@ public class Principal extends javax.swing.JFrame {
         setVisible(true);
         jtxt_user.setText(" ");
         jtxt_pw.setText(" ");
-        System.out.println(users);
+        //System.out.println(users);
     }//GEN-LAST:event_btn_crearActionPerformed
 
     private void btn_regresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_regresarActionPerformed
@@ -409,6 +409,7 @@ public class Principal extends javax.swing.JFrame {
     private void btn_albumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_albumActionPerformed
         jf_opcion.setVisible(false);
         jf_album.setVisible(true);
+        jf_album.setSize(400, 400);
         jf_album.setLocationRelativeTo(jf_opcion);
         
     }//GEN-LAST:event_btn_albumActionPerformed
