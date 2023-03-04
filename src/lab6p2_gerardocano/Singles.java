@@ -14,7 +14,7 @@ public class Singles extends Lanzamientos {
     public Singles() {
     super();
     }
-
+    
     public Singles(Cancion single, String titulo, String fecha, int conteo) {
         super(titulo, fecha, conteo);
         this.single = single;

@@ -21,6 +21,7 @@ public class Principal extends javax.swing.JFrame {
     public Principal() {
         setLocationRelativeTo(null);
         initComponents();
+        pack();
         
     }
 
@@ -58,6 +59,29 @@ public class Principal extends javax.swing.JFrame {
         btn_album = new javax.swing.JButton();
         btn_single = new javax.swing.JButton();
         jf_album = new javax.swing.JFrame();
+        jLabel8 = new javax.swing.JLabel();
+        jtxt_fecha = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jtxt_titulo = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        btn_addcancion = new javax.swing.JButton();
+        btn_creara = new javax.swing.JButton();
+        jf_cancion = new javax.swing.JFrame();
+        jLabel11 = new javax.swing.JLabel();
+        jtxt_titulocan = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jtxt_dur = new javax.swing.JTextField();
+        btn_addcan = new javax.swing.JButton();
+        jf_single = new javax.swing.JFrame();
+        jtxt_titulo2 = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jtxt_fecha2 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        jtxt_titulocan2 = new javax.swing.JTextField();
+        btn_crear2 = new javax.swing.JButton();
+        Duracion = new javax.swing.JLabel();
+        jtxt_duracion = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jtxt_userlog = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -221,6 +245,11 @@ public class Principal extends javax.swing.JFrame {
         });
 
         btn_single.setText("Single");
+        btn_single.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_singleActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jf_opcionLayout = new javax.swing.GroupLayout(jf_opcion.getContentPane());
         jf_opcion.getContentPane().setLayout(jf_opcionLayout);
@@ -246,15 +275,166 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(90, Short.MAX_VALUE))
         );
 
+        jLabel8.setText("Fecha");
+
+        jLabel9.setText("Titulo");
+
+        jLabel10.setText("Agregar Cancion");
+
+        btn_addcancion.setText("Add");
+        btn_addcancion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addcancionActionPerformed(evt);
+            }
+        });
+
+        btn_creara.setText("Crear Album");
+        btn_creara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_crearaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jf_albumLayout = new javax.swing.GroupLayout(jf_album.getContentPane());
         jf_album.getContentPane().setLayout(jf_albumLayout);
         jf_albumLayout.setHorizontalGroup(
             jf_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 702, Short.MAX_VALUE)
+            .addGroup(jf_albumLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(jf_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_creara)
+                    .addComponent(btn_addcancion)
+                    .addComponent(jLabel10)
+                    .addGroup(jf_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel9)
+                        .addComponent(jLabel8)
+                        .addComponent(jtxt_fecha)
+                        .addComponent(jtxt_titulo, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
         jf_albumLayout.setVerticalGroup(
             jf_albumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 589, Short.MAX_VALUE)
+            .addGroup(jf_albumLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel9)
+                .addGap(16, 16, 16)
+                .addComponent(jtxt_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel8)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(jLabel10)
+                .addGap(18, 18, 18)
+                .addComponent(btn_addcancion)
+                .addGap(32, 32, 32)
+                .addComponent(btn_creara)
+                .addContainerGap(42, Short.MAX_VALUE))
+        );
+
+        jLabel11.setText("Titulo ");
+
+        jLabel12.setText("Duracion");
+
+        btn_addcan.setText("Agregar");
+        btn_addcan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addcanActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jf_cancionLayout = new javax.swing.GroupLayout(jf_cancion.getContentPane());
+        jf_cancion.getContentPane().setLayout(jf_cancionLayout);
+        jf_cancionLayout.setHorizontalGroup(
+            jf_cancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_cancionLayout.createSequentialGroup()
+                .addGroup(jf_cancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jf_cancionLayout.createSequentialGroup()
+                        .addGap(190, 190, 190)
+                        .addComponent(jLabel11))
+                    .addGroup(jf_cancionLayout.createSequentialGroup()
+                        .addGap(184, 184, 184)
+                        .addComponent(jLabel12))
+                    .addGroup(jf_cancionLayout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addGroup(jf_cancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btn_addcan)
+                            .addGroup(jf_cancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jtxt_titulocan)
+                                .addComponent(jtxt_dur, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE)))))
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
+        jf_cancionLayout.setVerticalGroup(
+            jf_cancionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_cancionLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel11)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_titulocan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(jLabel12)
+                .addGap(29, 29, 29)
+                .addComponent(jtxt_dur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(btn_addcan)
+                .addContainerGap(109, Short.MAX_VALUE))
+        );
+
+        jLabel13.setText("Titulo de Single");
+
+        jLabel14.setText("Fecha");
+
+        jLabel15.setText("Titulo de cancion");
+
+        btn_crear2.setText("Crear");
+        btn_crear2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_crear2ActionPerformed(evt);
+            }
+        });
+
+        Duracion.setText("Duracion");
+
+        javax.swing.GroupLayout jf_singleLayout = new javax.swing.GroupLayout(jf_single.getContentPane());
+        jf_single.getContentPane().setLayout(jf_singleLayout);
+        jf_singleLayout.setHorizontalGroup(
+            jf_singleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_singleLayout.createSequentialGroup()
+                .addGap(91, 91, 91)
+                .addGroup(jf_singleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Duracion)
+                    .addComponent(jLabel15)
+                    .addComponent(jLabel14)
+                    .addComponent(jLabel13)
+                    .addComponent(jtxt_titulo2)
+                    .addComponent(jtxt_fecha2)
+                    .addComponent(jtxt_titulocan2)
+                    .addComponent(btn_crear2)
+                    .addComponent(jtxt_duracion, javax.swing.GroupLayout.DEFAULT_SIZE, 267, Short.MAX_VALUE))
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+        jf_singleLayout.setVerticalGroup(
+            jf_singleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_singleLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtxt_titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addGap(18, 18, 18)
+                .addComponent(jtxt_fecha2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jtxt_titulocan2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Duracion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jtxt_duracion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(btn_crear2)
+                .addGap(47, 47, 47))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -409,10 +589,57 @@ public class Principal extends javax.swing.JFrame {
     private void btn_albumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_albumActionPerformed
         jf_opcion.setVisible(false);
         jf_album.setVisible(true);
-        jf_album.setSize(400, 400);
+        jf_album.setSize(450, 400);
         jf_album.setLocationRelativeTo(jf_opcion);
         
     }//GEN-LAST:event_btn_albumActionPerformed
+
+    private void btn_addcancionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addcancionActionPerformed
+        jf_cancion.setVisible(true);
+        jf_cancion.setLocationRelativeTo(this);
+        jf_cancion.setSize(452, 351);
+       jf_album.setVisible(false);
+    }//GEN-LAST:event_btn_addcancionActionPerformed
+
+    private void btn_addcanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addcanActionPerformed
+         temporal.getCanciones().add(new Cancion(jtxt_titulocan.getText(), jtxt_dur.getText(), jtxt_titulo.getText()));
+         jf_cancion.setVisible(false);
+         jf_album.setVisible(true);
+         jtxt_titulocan.setText(" ");
+         jtxt_dur.setText(" ");
+    }//GEN-LAST:event_btn_addcanActionPerformed
+
+    private void btn_crearaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crearaActionPerformed
+        
+        JOptionPane.showMessageDialog(jf_album, "Album Creado");
+        temporal.setTitulo(jtxt_titulo.getText());
+        temporal.setFecha(jtxt_fecha.getText());
+        jf_album.setVisible(false);
+        jf_artista.setVisible(true);
+        albumes.add(temporal);
+        temporal = new Albumes();
+    }//GEN-LAST:event_btn_crearaActionPerformed
+
+    private void btn_singleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_singleActionPerformed
+       jf_single.setVisible(true);
+       jf_artista.setVisible(false);
+       jf_single.setLocationRelativeTo(jf_artista);
+       jf_artista.setSize(470, 390);
+    }//GEN-LAST:event_btn_singleActionPerformed
+
+    private void btn_crear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_crear2ActionPerformed
+       Cancion temporalcan = new Cancion(jtxt_titulocan2.getText(), jtxt_duracion.getText(), jtxt_titulo2.getText());
+       Singles temp = new Singles();
+       temp.setFecha(jtxt_fecha2.getText());
+       temp.setTitulo(jtxt_titulocan2.getText());
+       temp.setSingle(temporalcan);
+               jtxt_titulocan2.setText(" ");
+               jtxt_duracion.setText(" ");
+               jtxt_titulo2.setText(" ");
+               jtxt_fecha2.setText(" ");
+               jf_single.setVisible(false);
+               jf_artista.setVisible(true);
+    }//GEN-LAST:event_btn_crear2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -450,22 +677,35 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Duracion;
+    private javax.swing.JButton btn_addcan;
+    private javax.swing.JButton btn_addcancion;
     private javax.swing.JButton btn_agregar;
     private javax.swing.JButton btn_album;
     private javax.swing.JButton btn_close;
     private javax.swing.JButton btn_close2;
     private javax.swing.JButton btn_crear;
+    private javax.swing.JButton btn_crear2;
+    private javax.swing.JButton btn_creara;
     private javax.swing.JButton btn_login;
     private javax.swing.JButton btn_register;
     private javax.swing.JToggleButton btn_regresar;
     private javax.swing.JButton btn_single;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -474,15 +714,29 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTree jTree2;
     private javax.swing.JFrame jf_album;
     private javax.swing.JFrame jf_artista;
+    private javax.swing.JFrame jf_cancion;
     private javax.swing.JFrame jf_opcion;
     private javax.swing.JFrame jf_oyente;
     private javax.swing.JFrame jf_registro;
+    private javax.swing.JFrame jf_single;
     private javax.swing.JSpinner js_age;
+    private javax.swing.JTextField jtxt_dur;
+    private javax.swing.JTextField jtxt_duracion;
+    private javax.swing.JTextField jtxt_fecha;
+    private javax.swing.JTextField jtxt_fecha2;
     private javax.swing.JTextField jtxt_pw;
     private javax.swing.JTextField jtxt_pwlogin;
+    private javax.swing.JTextField jtxt_titulo;
+    private javax.swing.JTextField jtxt_titulo2;
+    private javax.swing.JTextField jtxt_titulocan;
+    private javax.swing.JTextField jtxt_titulocan2;
     private javax.swing.JTextField jtxt_user;
     private javax.swing.JTextField jtxt_userlog;
     // End of variables declaration//GEN-END:variables
     ArrayList<Usuarios> users = new ArrayList();
     ArrayList<Bitcora> bit = new ArrayList();
+    Albumes temporal = new Albumes();
+    ArrayList<Albumes> albumes= new ArrayList();
+    ArrayList<Singles> single = new ArrayList();
+    
 }
