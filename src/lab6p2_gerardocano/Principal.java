@@ -191,6 +191,8 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        jTree2.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jScrollPane3.setViewportView(jTree2);
 
         btn_agregar.setText("Agregar");
@@ -674,6 +676,11 @@ public class Principal extends javax.swing.JFrame {
                 new Principal().setVisible(true);
             }
         });
+    adminUser au= new adminUser("./users.txt");        
+        au.cargarArchivo();
+         for (Usuarios t : au.getLista()) {
+            System.out.println( au.getLista().indexOf(t)+"- "+t );
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

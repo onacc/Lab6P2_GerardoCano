@@ -10,6 +10,14 @@ package lab6p2_gerardocano;
  */
 public class Usuarios {
     protected String username, password,tipo;
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
     protected int edad;
 
     public Usuarios() {
